@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Finger Paint', sans-serif;
+    margin: 0;
+}
+
+.wrapper{
+    max-width: 1134px;
+    margin: 0 auto;
+}
+
+.btn{
+    border-radius: 15px;
+    background: #6FADA8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 16px 32px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn.light{
+    font-family: "Inter";
+}
+
+header{
+    height: 100vh;
+    width: 100%;
+    border-radius: 30px;
+    border: 2px solid #FFF;
+    background: rgba(217, 217, 217, 0.40);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1134px;
+    top: 36px;
+    z-index: 100;
+}
+
+nav .logo{
+    color: #70AEA9;
+    text-align: center;
+    font-family: "Finger Paint";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+nav ul{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li a{
+    font-family: "Finger Paint";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    color: #70AEA9;
+}
+
+.hero-section{
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.hero-section .left h1{
+    color: #21242A;
+    font-family: "Inter";
+    font-size: 62px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+.hero-section .left p{
+    color: #21242A;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+
+.hero-section .left{
+    width: 457px;
+}
+
+.hero-section .right{
+    align-self: flex-end;
+}
+.hero-section .right img{
+    height: 413.63px;
+    vertical-align: middle;
+}
+
+section{
+    margin-top: 26px;
+}
+
+.highlight{
+    background-color: rgba(67, 104, 80, 0.20);
+    padding: 29px 0;
+}
+
+.highlight .light{
+    text-align: center;
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.highlight .green{
+    color: #69A59D;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    text-align: center;
+}
+
+.highlight .cards{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.highlight h3{
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.feat{
+    padding: 20px 0;
+}
+
+.feat .brown{
+    border-radius: 40px;
+    background: rgba(255, 237, 233, 0.80); 
+    display: inline-block;
+    padding: 16px 32px;
+    color: #69A59D;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.feat .features{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.feat .feature{
+    border-radius: 40px;
+    background: rgba(255, 237, 233, 0.80);
+    padding: 16px 32px;
+}
+
+.feat h3{
+    color: #000;
+    text-align: center;
+    font-family: "Inter";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.need-use{
+    padding: 20px 0;
+    background: rgba(217, 217, 217, 0.40);
+}
+
+.need-use .pink{
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    background-color: rgba(153, 188, 133, 0.50);
+    border-radius: 40px;
+    padding: 10px 20px;
+}
+
+.need-use .needs{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.need-use .need{
+    border-radius: 40px;
+    background: rgba(255, 237, 233, 0.80);
+    padding: 16px 32px;
+}
+
+.need-use .info{
+    border-radius: 30px;
+    background: #C1E3E6;
+}
+
+.what{
+    padding: 20px 0;
+}
+
+.what .black{
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    border-radius: 30px;
+    background: #C1E3E6;
+    padding: 10px 20px;
+}
+
+.what .Saids{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.what .info{
+    color: #252525;
+    text-align: center;
+    font-family: "Nunito Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+footer{
+    background-color: #69A59D;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer ul{
+    list-style: none;
+    padding-left: 20px;
+}
+
+footer ul li{
+    margin: 5px 0;
+}
+
+.links-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.link .judul{
+    color: #FFF;
+    text-align: center;
+    font-family: "Finger Paint";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: -130px;
+}

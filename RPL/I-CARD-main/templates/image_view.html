@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Image Detail{% endblock title %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'globals.css' %}" />
+<link rel="stylesheet" href="{% static 'event_page.css' %}" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<header>
+    <div class="wrapper">
+        <nav>
+            <div class="logo">I-CARD</div>
+            <ul>
+                <li><a href="setting.html" class="group-kecil"><img src="{% static 'asset/Component 2.png' %}"></a></li>
+                <li><a href="{% url 'index' %}"><img src="{% static 'asset/exit.png' %}"></a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="image-container mb-4">
+                <img src="{{ image.image.url }}" alt="{{ image.title }}" class="image img-fluid">
+                <div class="overlay" id="overlay">
+                    <span id="textOnImage">{{ image.title }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        {% if request.user.is_authenticated and not request.user.is_superuser %}
+        <div class="col-md-8 offset-md-2">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Add Text To Image</h2>
+                    <form id="cardForm">
+                        {% csrf_token %}
+                        <input type="hidden" id="imageId" name="image_id" value="{{ image.id }}">
+                        <div class="mb-3">
+                            <input type="text" name="message" id="message" class="form-control" placeholder="Enter message">
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="generateCertificate()">Submit</button>
+                    </form>
+                    <div id="result" class="mt-3"></div>
+                    <form id="downloadForm" method="get" action="{% url 'download_image' image.id %}">
+                        <input type="hidden" id="downloadText" name="text" value="">
+                        <button type="submit" id="downloadButton" class="btn btn-success mt-3" disabled>Download Image</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if request.user.is_superuser %}
+        <div class="col-md-8 offset-md-2">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Update Image</h2>
+                    <form action="/image/{{ image.id }}/update/" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input type="text" name="title" class="form-control" value="{{ image.title }}">
+                        </div>
+                        <div class="mb-3">
+                            <select name="image_type" class="form-select">
+                                <option value="wedding" {% if image.image_type == 'wedding' %}selected{% endif %}>Wedding</option>
+                                <option value="party" {% if image.image_type == 'party' %}selected{% endif %}>Party</option>
+                                <option value="event" {% if image.image_type == 'event' %}selected{% endif %}>Event</option>
+                                <option value="birthday" {% if image.image_type == 'birthday' %}selected{% endif %}>Birthday</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <input type="file" name="image" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">Delete Image</h2>
+                    <p>Are you sure you want to delete '{{ image.title }}'?</p>
+                    <form action="/image/{{ image.id }}/delete/" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+    .image-container {
+        position: relative;
+        display: inline-block;
+        margin-top: -20px; /* Adjusted margin-top */
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 24px;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .image-container:hover .overlay {
+        opacity: 1;
+    }
+
+    #textOnImage {
+        z-index: 1;
+    }
+</style>
+
+<script>
+    function generateCertificate() {
+        var name = document.getElementById("message").value;
+        var textOnImage = document.getElementById("textOnImage");
+        textOnImage.innerHTML = name;
+
+        var imageWidth = document.querySelector('.image').offsetWidth;
+        var textWidth = textOnImage.offsetWidth;
+
+        var xPosition = (imageWidth - textWidth) / 2;
+        textOnImage.style.left = xPosition + 'px';
+
+        var imageHeight = document.querySelector('.image').offsetHeight;
+        var textHeight = textOnImage.offsetHeight;
+
+        var yPosition = (imageHeight - textHeight) / 2;
+        textOnImage.style.top = yPosition + 'px';
+
+        document.getElementById("overlay").style.opacity = 1;
+
+        var downloadButton = document.getElementById("downloadButton");
+        downloadButton.disabled = false;
+
+        var downloadText = document.getElementById("downloadText");
+        downloadText.value = name;
+
+        var formData = new FormData();
+        formData.append('image_id', document.getElementById("imageId").value);
+        formData.append('message', name);
+
+        fetch("{% url 'card_create' %}", {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        })
+        .then(response => {
+            console.log('Data berhasil disimpan ke database.');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+
+<footer>
+    <div class="wrapper">
+        <div class="links-container">
+            <div class="link">
+                <h3 class="judul">I-Card</h3>
+            </div>
+            
+            <div class="link">
+                <h3>About Us</h3>
+                <ul><li><a href="#">Stay Connected with Us</a></li></ul>
+
+                <h3>Whatsapp Community</h3>
+                <ul><li><a href="#">Here</a></li></ul>
+
+                <h3>Telegram Group</h3>
+                <ul><li><a href="#">Here</a></li></ul>
+            </div>
+
+            <div class="link">
+                <h3>Our Social Media</h3>
+                <img src="{% static 'asset/Premium Vector _ Social media logo icon collection isolated on white 1.png' %}" alt=""/>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock content %}

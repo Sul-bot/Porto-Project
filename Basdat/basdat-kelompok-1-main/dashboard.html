@@ -1,0 +1,158 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-side">
+            <h2 class="logo">Carbon Away</h2>
+        </div>
+        <div class="right-side">
+         <div class="right-side">
+            <a href="dashboard.php">Tracker</a>
+            <a href="homepage.php">Scoreboard</a>
+            <a href="homepage.php">Achievement</a>
+            <a href="homepage.php">Recommendation</a>
+        </div>
+    </nav>
+    <div class="reset">
+        <p> Halo <?php
+    // Tampilan tulisan khusus untuk pengguna yang sudah login
+     if (isset($_SESSION['username'])) {echo $_SESSION['username'];
+     }
+     ?>
+            <?php
+    // Tampilkan tulisan khusus untuk pengguna yang belum login
+    if (!isset($_SESSION['username'])) {
+        echo '<a>user</a>';
+    }
+    ?></p>
+        <p> Ayo lacak pengeluaran karbonmu disini!</p> 
+    </div>
+    <div class="orang">
+        <img src="User (1).svg" width="100px" height="50px">
+    </div>
+    <nav class="nav">
+        <p class="tra">Tracker</p>
+    </nav>
+    <div class="total">
+        <p> Total</p>
+        <p>Carbon</p>
+    </div>
+    <div class="calendar1">
+        <img src="Calendar.svg" width="100px" height="100px">
+    </div>
+    <div class="days">
+        <img src="7 days.svg" width="100px" height="100px">
+    </div>
+    <div class="calendar2">
+        <img src="Calendar2.png" width="100px" height="100px">
+    </div>
+    <div class="year">
+        <img src="Calendar (2).svg" width="100px" height="100px">
+    </div>
+    <div class="day">
+        <p> /Day</p>
+    </div>
+    <div class="week">
+        <p> /Week</p>
+    </div>
+    <div class="month">
+        <p> /Month</p>
+    </div>
+    <div class="ye">
+        <p> /Year</p>
+    </div>
+    <nav class="navba">
+        <p class="scor">Scoreboard</p>
+    </nav>
+    <div class="rank">
+        <p> 3 peringkat teratas*</p>
+        <p> mencapai komitmen pengurangan emisi</p>
+    </div>
+    <div class="user1">
+        <img src="div.col.svg" width="200px" height="200px">
+    </div>
+    <div class="user2">
+        <img src="div.col (1).svg" width="200px" height="200px">
+    </div>
+    <div class="user3">
+        <img src="div.col (2).svg" width="200px" height="200px">
+    </div>
+    <nav class="ach">
+        <p class="badg">Achievement & Badges</p>
+    </nav>
+    <div class="pine">
+        <img src="Pine.svg" width="120px" height="120px">
+    </div>
+    <div class="pine1">
+        <img src="Tree (2).svg" width="100px" height="100px">
+    </div>
+    <div class="thr">
+        <img src="Tree (1).svg" width="100px" height="100px">
+    </div>
+    <div class="fore">
+        <img src="Forest.svg" width="100px" height="100px">
+    </div>
+    <div class="fore1">
+        <img src="Forest (2).svg" width="100px" height="100px">
+    </div>
+    <div class="pinus1">
+        <p> New User</p>
+    </div>
+    <div class="pinus2">
+        <p> 3 Days Login</p>
+    </div>
+    <div class="pohon1">
+        <p> 7 Days Login</p>
+    </div>
+    <div class="pohon2">
+        <p> 30 Days Login</p>
+    </div>
+    <div class="hutan">
+        <p> 365 Days Login</p>
+    </div>
+    <nav class="rec">
+        <p class="fun">Recommendation & Fun Fact</p>
+    </nav>
+    <div class="to10">
+        <img src="Top 10.svg" width="120px" height="120px">
+    </div>
+    <div class="to5">
+        <img src="Top 5.svg" width="100px" height="100px">
+    </div>
+    <div class="to3">
+        <img src="Podium.svg" width="100px" height="100px">
+    </div>
+    <div class="zcar">
+        <img src="Carbon neutral.svg" width="100px" height="100px">
+    </div>
+    <div class="t10">
+        <p> Top 10</p>
+    </div>
+    <div class="t5">
+        <p> Top 5</p>
+    </div>
+    <div class="t3">
+        <p> Top 3</p>
+    </div>
+    <div class="zero">
+        <p> Zero Carbon</p>
+    </div>
+    <div class="pol">
+        <p> Polusi yang kamu keluarkan ketika</p>
+        <p> naik bus kampus hanya sejumlah</p>
+    </div>
+    <div class="kaki">
+        <p> Polusi yang kamu keluarkan ketika jalan</p>
+        <p> kaki ke kampus sejumlah 0</p>
+    </div>
+</body>
+</html>

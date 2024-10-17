@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Away</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-side">
+            <h2 class="logo">Carbon Away</h2>
+        </div>
+        <div class="right-side">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="homepage.html">Homepage</a>
+        </div>
+    </nav>
+    <div class="gambar">
+        <img src="Gambar Konsep Ekologi Lingkungan Hari Planet Bumi Hijau 3d Png Dan Psd Gratis _ Elemen Grafis PSD Unduhan Gratis - Pikbest 1.svg" width="720px" height="400px">
+    </div>
+    <div class="content">
+        <p> Kurangi</p>
+        <p> pengeluaran</p>
+        <p> karbon, sayangi</p>
+        <p> bumi!</p>
+    </div>
+    <div class="signup">
+        Sign Up
+    </div>
+    <form class="form-container" action="prosessignup.php" method="POST">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Kata Sandi:</label>
+        <input type="text" id="password" name="password">
+
+        <input type="submit" value="Buat Akun">
+    </form>
+    <div class="akunn">
+        <p> sudah punya akun?</p>
+    </div>
+    <div class="login-box">
+        <a href="login_page.html"><button class="login-button">Login</button></a>
+    </div>
+
+   <?php if(isset($_GET['status'])): ?>
+	<p>
+		<?php
+			if($_GET['status'] == 'sukses'){
+				echo "Signup succsess!";
+			} else {
+				echo "Signup failed!";
+			}
+		?>
+	</p>
+	<?php endif; ?>
+   
+
+</body>
+</html>

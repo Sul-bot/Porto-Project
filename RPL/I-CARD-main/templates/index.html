@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My First App{% endblock title %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'globals.css' %}" />
+<link rel="stylesheet" href="{% static 'landingpage.css' %}" />
+
+<!-- {% if user %}
+        <-- Jika pengguna sudah login -->
+        <!-- <p>Hello {{ user.username }}</p>
+        <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <input type="submit" value="Logout">
+        </form> -->
+    <!-- {% else %}
+        <-- Jika pengguna belum login
+        <p>Selamat Datang
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <input type="submit" value="Login">
+        </form>
+    {% endif %} -->
+
+    {% if user.is_authenticated %}
+    {% if not user.is_superuser %} <!--Jika dia bukan super user dia bisa liat-->
+        <!-- <form method="post" action="{% url 'show_images' %}">
+            {% csrf_token %}
+            <input type="submit" value="Make Your Card">
+        </form> -->
+    {% endif %}
+{% comment %} {% else %}
+    <p>You are not our member. Please <a href="{% url 'login' %}">login</a> to proceed.</p> {% endcomment %}
+{% endif %}
+
+<header>
+    <div class="wrapper">
+        <nav>
+            <div class="logo">I-CARD</div>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="dashboard_birthday.html">Dashboard</a></li>
+                <li><a href="{% url 'login' %}" class="btn dark">Login</a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-section">
+            <div class="left">
+                <h1>Free <br/>Invitation <br/>Maker</h1>
+                <p>Let’s Make Your Unique Invitation Card :<br/>
+                    “Just a One Tap”</p>
+                <a href="{% if user.is_authenticated %}{% url 'show_images' %}{% else %}{% url 'login' %}{% endif %}" class="btn light">Create Your Invitation</a>
+            </div>
+            <div class="right">
+                <img src="{% static 'asset/landpage1.png' %}" alt=""/>
+            </div>
+        </div>
+        
+</header>
+
+<section class="highlight">
+    <div class="wrapper">
+        <h2 class="light">Highlight</h2>
+        <h2 class="green">Click. Save. Share. Love it.</h2>
+
+        <div class="cards">
+            <div class="card">
+                <img src="{% static 'asset/Vector.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Just a Single <br/>“Click”</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'asset/heart.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Mark up to <br/> you</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'asset/download.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Download <br/> with any format</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{% static 'asset/share.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Share with <br/> beloved people</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feat">
+    <div class="wrapper">
+        <h2 class="brown">Features</h2>
+
+        <div class="features">
+            <div class="feature">
+                <img src="{% static 'asset/tabler_free-rights.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Yes, this is free <br/> without any cost or <br/>payment</h3>
+                </div>
+            </div>
+
+            <div class="feature">
+                <img src="{% static 'asset/ph_tree-thin.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Enviromental <br/> Friendly for <br/> sustainability</h3>
+                </div>
+            </div>
+
+            <div class="feature">
+                <img src="{% static 'asset/carbon_template.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Coming for <br/> All Needs and Use</h3>
+                </div>
+            </div>
+
+            <div class="feature">
+                <img src="{% static 'asset/solar_high-quality-line-duotone.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Always giving the best <br/> with HD Quality</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="need-use">
+    <div class="wrapper">
+        <h2 class="pink">Needs for All Use</h2>
+
+        <div class="needs">
+            <div class="need">
+                <img src="{% static 'asset/gambar 4.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Birthday</h3>
+                </div>
+            </div>
+
+            <div class="need">
+                <img src="{% static 'asset/gambar 3.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Wedding</h3>
+                </div>
+            </div>
+
+            <div class="need">
+                <img src="{% static 'asset/gambar 2.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Party</h3>
+                </div>
+            </div>
+
+            <div class="need">
+                <img src="{% static 'asset/gambar 1.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Event</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="what">
+    <div class="wrapper">
+        <h2 class="black">What They Said?</h2>
+
+        <div class="Saids">
+            <div class="said">
+                <img src="{% static 'asset/kiri.png' %}" alt=""/>
+            </div>
+
+            <div class="need">
+                <img src="{% static 'asset/mingcute_user-4-line.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Lorem ipsum dolor sit amet consectetur. Amet congue porttitor elementum commodo. Pulvinar egestas aliquam vel non sem etiam feugiat sed. Amet adipiscing purus diam aenean</h3>
+                </div>
+            </div>
+
+            <div class="need">
+                <img src="{% static 'asset/mingcute_user-4-line.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Lorem ipsum dolor sit amet consectetur. Amet congue porttitor elementum commodo. Pulvinar egestas aliquam vel non sem etiam feugiat sed. Amet adipiscing purus diam aenean</h3>
+                </div>
+            </div>
+
+            <div class="need">
+                <img src="{% static 'asset/mingcute_user-4-line.png' %}" alt=""/>
+                <div class="info">
+                    <h3>Lorem ipsum dolor sit amet consectetur. Amet congue porttitor elementum commodo. Pulvinar egestas aliquam vel non sem etiam feugiat sed. Amet adipiscing purus diam aenean</h3>
+                </div>
+            </div>
+
+            <div class="need">
+                <img src="{% static 'asset/kanan.png' %}" alt=""/>
+            </div>
+        </div>
+    </div>
+</section>
+        
+<footer>
+    <div class="wrapper">
+        <div class="links-container">
+            <div class="link">
+                <h3 class="judul">I-Card</h3>
+            </div>
+            
+            <div class="link">
+                <h3>About Us</h3>
+                <ul><li><a href="#">Stay Conected with Us</a></li></ul>
+
+                <h3>Whatsapp Comunity</h3>
+                <ul><li><a href="#">Here</a></li></ul>
+
+                <h3>Telegram Group</h3>
+                <ul><li><a href="#">Here</a></li></ul>
+            </div>
+
+            <div class="link">
+                <h3>Our Social Media</h3>
+                <img src="{% static 'asset/Premium Vector _ Social media logo icon collection isolated on white 1.png' %}" alt=""/>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+{% endblock content %}

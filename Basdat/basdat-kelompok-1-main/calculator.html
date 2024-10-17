@@ -1,0 +1,59 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    header("Location: login_page.php");
+    exit();
+    // Pesan kesalahan login
+$pesan_eror = "";
+} 
+else {
+    // Login gagal
+    $pesan_login = "Anda belum login";
+    
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-side">
+            <h2 class="logo">Carbon Away</h2>
+        </div>
+        <div class="right-side">
+            <a href="setting.html">Setting Akun</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="homepage.html">Homepage</a>
+        </div>
+    </nav>
+    <div class="calc">
+        Calculator
+    </div>
+    <div class="jenis">
+        <p> Pilih jenis kendaraan yang digunakan </p>
+        <p> dan masukkan total jarak yang ditempuh </p>
+    </div>
+    <div class="opsi">
+        <div class="calculator">
+            <label for="vehicle-type">Pilih jenis kendaraan:</label>
+            <select id="vehicle-type">
+              <option value="motorcycle">Sepeda Motor</option>
+              <option value="electric-car">Kendaraan Listrik</option>
+              <option value="car">Mobil</option>
+              <option value="bus">Bus</option>
+            </select>
+    </div>
+    <div class="dis">  <label for="distance">Jarak yang ditempuh (KM):</label>
+        <input type="number" id="distance" placeholder="Masukkan jarak"> </div>
+    <div class="hitung"> <button id="calculate">Hitung</button></div>
+    <div id="result">Jejak Karbon yang dihasilkan: <span id="carbon-footprint">0</span></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

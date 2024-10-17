@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.main{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.navbar {
+    display: flex;
+    width: 1350px;
+    height: 30px;
+    padding: 10px 20px;
+    margin-right: 100px;
+    align-items: center;
+    background-color:#709778;
+}
+.left-side {
+    margin: 10px;
+    display: flex;
+}
+.right-side {
+    margin-left: 600px;
+    margin-left: 720px;
+    display: flex;
+    
+}
+
+.right-side a {
+    margin-left: 40px;
+    text-decoration: none;
+    color:white;
+}
+
+.logo{
+    color: white;
+    position: relative;
+    left: 2px;
+    top: -5px;
+    font-size: 1.5rem;
+    font-family: Figma hand;
+    padding-left: 20px;
+    float: left;
+    padding-top: 10px;
+}
+
+.calc{
+    position:absolute;
+    top: 90px;
+    right: 600px;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color:#709778;
+}
+
+.jenis{
+    position: absolute;
+    display: flex;
+    width: 30rem;
+    height: 6rem;
+    flex-direction: column;
+    justify-content: center;
+    color:#709778;
+    text-align: center;
+    margin: 100px;
+    top: 10px;
+    right: 370px;
+    width: 380px;
+}
+
+.opsi{
+    margin-top: 180px;
+    margin-left: 400px;
+}
+
+.calculator {
+    width: 250px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 280px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position:absolute;
+    margin: 100px;
+    top: 120px;
+    right: 400px;
+    color:#709778
+}
+.hitung{
+    width: 250px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    position:absolute;
+    margin: 100px;
+    top: 260px;
+    right: 375px;
+    width: 330px;
+    padding: 15px;
+    color: #4caf50;
+}
+.hitung button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff; 
+    background-color: #5bae5e;
+    border: none; 
+  }
+
+.hitung-button {
+    position: absolute;
+    padding: 10px 20px;
+    border: none;
+    top: 750px;
+    right: 615px;
+    border-radius: 5px;
+    background-color: #63b666;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px 15px 15px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.hitung-box:hover {
+    background-color: #45a049;
+}
+.dis {
+    width: 250px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 280px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position:absolute;
+    margin: 100px;
+    top: 210px;
+    right: 400px;
+    color:#709778
+  }
+#result {
+    width: 250px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    position:absolute;
+    margin: 100px;
+    top: 370px;
+    right: 400px;
+    width: 290px;
+    padding: 15px ;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #4caf50;
+  }
+select option{
+    color: #4caf50;
+}
+
+#calculate{
+    width: 250px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    position:absolute;
+    margin: 100px;
+    top: -50px;
+    right: -72px;
+    width: 320px;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color:white;
+}
+.calculate-box:hover {
+    background-color: #45a049;
+}

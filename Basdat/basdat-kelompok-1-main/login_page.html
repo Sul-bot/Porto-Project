@@ -1,0 +1,104 @@
+<?php
+include("config.php");
+
+
+if (isset($_SESSION['username'])) {
+    // Jika sudah login, alihkan ke halaman dashboard atau halaman lain yang sesuai
+    header("Location: dashboard.php");
+    exit();
+}
+// Pesan kesalahan login
+$pesan_eror = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Tangkap data dari formulir
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    try {
+   
+        $sql = "SELECT * FROM user1 WHERE username = '$username' AND password = '$password'";
+        $hasil = pg_query($db, $sql);
+    
+        // Memeriksa hasil query
+        if ($hasil) {
+            // Login berhasil
+            $num_rows = pg_num_rows($hasil);
+            if ($num_rows > 0) {
+            session_start(); // Memulai sesi 
+            $_SESSION['username'] = $username; // Menyimpan username dalam sesi
+            header("Location: dashboard.php"); // Alihkan ke halaman dashboard
+        } else {
+            // Login gagal
+            $pesan_eror = "Username atau Password anda salah";
+            
+        }
+}
+    }
+    catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    }
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="login_page.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-side">
+            <h2 class="logo">Carbon Away</h2>
+        </div>
+        <div class="right-side">
+            <a href="homepage.php">Homepage</a>
+        </div>
+    </nav>
+    <div class="pictures">
+        <img src="Taking care of the earth Customizable Semi Flat Illustrations _ Pana Style 1.svg" width="750px" height="350px">
+    </div>
+    <div class="login">
+        Login
+    </div>
+     <!-- Tampilkan pesan kesalahan -->
+    <?php if (!empty($pesan_eror)) { ?>
+        <p style="color: red;"><?php echo $pesan_eror; ?></p>
+    <?php } ?>
+
+    <?php if (!empty($pesan_login)) { ?>
+        <p style="color: red;"><?php echo $pesan_eror; ?></p>
+    <?php } ?>
+    <form class="form-container" action="login_page.php" method="POST">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Kata Sandi:</label>
+        <input type="text" id="password" name="password">
+        <input type="submit" value="Login" action="proseslogin.php" method="POST"> 
+    </form>
+    <div class="ingat">
+        <p> Ingat saya</p>
+    </div>
+    <div class="lupa">
+        <a href="forgot.php">Lupa kata sandi?</a>
+    </div>
+    <div class="google">
+        <p> atau kamu bisa bergabung menggunakan</p>
+    </div>
+    <div class="reg">
+        <a href="index.php">Belum punya akun? Klik di sini untuk daftar sekarang!</a>
+    </div>
+    <div class="logogoogle">
+        <img src="flat-color-icons_google (1).svg" width="30px" height="30px">
+    </div>
+    <div class="vektor">
+        <img src="pepicons-pencil_line-x.svg">
+    </div>
+    <div class="vektor2">
+        <img src="pepicons-pencil_line-x.svg">
+    </div>
+</body>
+</html>

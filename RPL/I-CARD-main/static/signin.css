@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    font-family: "Finger Paint", sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar{
+    background-color: white;
+    font-family: "Finger Paint";
+    height: 86px;
+    flex-shrink: 0;
+}
+
+.navdiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.logo a{
+    color: #70AEA9;
+    text-align: center;
+    font-family: "Finger Paint";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-left: 25px;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+li a{
+    color: #70AEA9;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+button{
+    border-radius: 15px;
+    border: 1px solid #FFF;
+    background: #6FADA8;
+    margin-right: 25px;
+    width: 115px;
+    height: 43px;
+    flex-shrink: 0;
+}
+
+button a{
+    color: #FFF;
+    text-align: center;
+    -webkit-text-stroke-width: 1;
+    -webkit-text-stroke-color: #FFF;
+    font-family: "Finger Paint";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-weight: bold;
+}
+
+.panels-container{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-family: "Finger Paint";
+    color: #00bfa6;
+    font-size: 36px;
+    margin-left: 50px;
+    margin-top: -150px;
+}
+
+.panel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.left-panel{
+    padding: 3rem 17% 2rem 15%
+}
+
+.panel .content{
+    color: white;
+}
+
+.image{
+    width: 90%;
+}
+
+.png2{
+    position: relative;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    background: white;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.form-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title{
+    font-size: 2.2rem;
+    color: #69A59D;
+    margin-bottom: 10px;
+}
+
+.input-field{
+    max-width: 600px;
+    width: 100%;
+    height: 65px;
+    margin: 10px 0;
+    border-radius: 15px;
+    background: rgba(217, 217, 217, 0.40);
+    display:grid;
+    grid-template-columns: 100% 100%;
+    padding:0 0.4rem;
+    position: relative;
+}
+
+.input-field input{
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    line-height: 1;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #333;
+}
+
+.input-field input:placeholder-shown{
+    color: #aaa;
+    font-weight: 500;
+    font-family: "Finger Paint";
+}
+
+.btn{
+    width: 600px;
+    height: 49px;
+    border-radius: 30px;
+    border: 2px solid #69A59D;
+    background: #FFF;
+    color: #69A59D;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background: #00bfa6;
+}
+
+.have-account{
+    padding: 0.7rem 0;
+    color: #69A59D;
+}
+
+.log{
+    color: #69A59D;
+    font-weight: bold;
+    font-size: 15px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.signup{
+    position: absolute;
+    top: 48%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.remember-forgot{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    color: #70B0AA;
+}
+
+.remember-forgot a{
+    color: #70B0AA;
+}
+
+.have-account{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

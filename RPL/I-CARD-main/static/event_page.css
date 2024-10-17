@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Finger Paint', sans-serif;
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1134px;
+    margin: 0 auto;
+}
+
+.btn-section {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.btn {
+    border-radius: 40px;
+    background: #6FADA8;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #00bfa6;
+}
+
+header {
+    height: 60vh; /* Adjusted height */
+    width: 100%;
+    border-radius: 30px;
+    border: 2px solid #FFF;
+    padding-top: 10px; /* Added padding-top to reduce distance */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+nav .logo {
+    color: #70AEA9;
+    text-align: center;
+    font-family: "Finger Paint";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li a {
+    width: 32.667px;
+    height: 40.833px;
+    flex-shrink: 0;
+}
+
+.hero-section {
+    height: 80vh;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.hero-section .lign {
+    border-radius: 40px;
+    background: #89BDC5;
+    padding: 10px 20px;
+    color: white;
+    font-family: "Inter";
+    font-size: 40px;
+    font-style: normal;
+    font-weight: bold;
+    align-items: center;
+    text-align: center;
+    margin-left: 450px;
+    display: inline-block;
+}
+
+.hero-section .align {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 100px;
+}
+
+.hero-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero-section .left {
+    width: 700px;
+    position: relative;
+    border-radius: 30px;
+    background-color: #89BDC5;
+    padding: 10px 20px;
+}
+
+.hero-section h2 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.container h2 {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.input-field {
+    max-width: 650px;
+    width: 1000%;
+    height: 30px;
+    border-radius: 8px;
+    background: white;
+    grid-template-columns: 100% 100%;
+    display: grid;
+    position: relative;
+}
+
+.input-field input {
+    background: none;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    line-height: 1;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #333;
+}
+
+.textarea {
+    max-width: 650px;
+    width: 1000%;
+    height: 300px;
+    border-radius: 4px;
+    background: white;
+    grid-template-columns: 100% 100%;
+    display: grid;
+    position: relative;
+}
+
+.textarea {
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    line-height: 1;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #333;
+}
+
+footer {
+    background-color: #69A59D;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+.links-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.link .judul {
+    color: #FFF;
+    text-align: center;
+    font-family: "Finger Paint";
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* Additional styles for reducing the gap between header, image, and edit/delete box */
+.container.mt-3 {
+    margin-top: 20px; /* Reduced margin-top for the container */
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px; /* Reduced margin-bottom for the image container */
+}
+
+.card.mb-4 {
+    margin-bottom: 80px; /* Reduced margin-bottom for the card */
+}

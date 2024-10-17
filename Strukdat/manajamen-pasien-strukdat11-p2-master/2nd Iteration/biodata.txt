@@ -1,0 +1,88 @@
+============================
+Nama: Fari
+Nomor Identitas: 123
+Usia: 17
+Alamat: Bogor
+Kontak: 081278906543
+Riwayat Penyakit:
+pilek
+pusing
+Riwayat Obat:
+Catatan Jadwal:
+Nama Jadwal: 
+Deskripsi: 
+Nama Dokter: 
+Tanggal: 2009125536
+Waktu: 
+Riwayat Obat:
+Bystolic
+Catatan Jadwal:
+Nama Jadwal: 
+Deskripsi: 
+Nama Dokter: 
+Tanggal: 5
+Waktu: 
+============================
+Nama: Ghani
+Nomor Identitas: 123
+Usia: 20
+Alamat: Bogor
+Kontak: 0812
+Riwayat Penyakit:
+Riwayat Obat:
+Catatan Jadwal:
+Nama Jadwal: 
+Deskripsi: 
+Nama Dokter: 
+Tanggal: 2009125536
+Waktu: 
+Riwayat Obat:
+Salbutamo
+Catatan Jadwal:
+Nama Jadwal: 
+Deskripsi: 
+Nama Dokter: 
+Tanggal: 6
+Waktu: 
+Riwayat Obat:
+Catatan Jadwal:
+Nama Jadwal: 
+Deskripsi: Check Up rutin penyakit batuk
+Nama Dokter: Dr. Tirta Saputra
+Tanggal: 1717088400
+Waktu: 16:00
+============================
+Nama: Galang
+Nomor Identitas: 123
+Usia: 20
+Alamat: Bogor
+Kontak: 0812
+Riwayat Penyakit:
+Nama Jadwal: 
+Deskripsi: 
+Nama Dokter: 
+Tanggal: 1971114656
+Waktu: 
+Riwayat Obat:
+Salbutamo
+Catatan Jadwal:
+Nama Jadwal: 
+Deskripsi: 
+Nama Dokter: 
+Tanggal: 7
+Waktu: 
+Riwayat Obat:
+Catatan Jadwal:
+Nama Jadwal: 
+Deskripsi: Check Uo rutin
+Nama Dokter: Dr. Tirta Saputra
+Tanggal: 1717088400
+Waktu: 10:00
+Riwayat Obat:
+Catatan Jadwal:
+Nama Jadwal: 
+Deskripsi: Chekc up
+Nama Dokter: Dr. Boyke Prayoga
+Tanggal: 1716915600
+Waktu: 10:00
+============================

@@ -1,0 +1,168 @@
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="left-side">
+            <h2 class="logo">Carbon Away</h2>
+        </div>
+        <div class="right-side">
+            <a href="dashboard.php">Dashboard</a>
+            <a href="calculator.php">Calculator</a>
+            <a href="homepage.php">About Us</a>
+            <a href="homepage.php">Benefit</a>
+            <?php
+    // Tampilkan tulisan khusus untuk pengguna yang belum login
+    if (!isset($_SESSION['username'])) {
+        echo '<a href="login_page.php">LOGIN</a>';
+    }
+    ?>
+            <?php
+    // Tampilkan tulisan khusus untuk pengguna yang belum login
+    if (isset($_SESSION['username'])) {
+        echo '<a href="logout.php">LOGOUT</a>';
+    }
+    ?>
+        </div>
+    </nav>
+    <div class="yu">
+        <p> Yuk mulai cari tahu berapa banyak jumlah CO2 yang kamu hasilkan</p>
+        <p> dan apa yang harus dilakukan untuk</p>
+        <p> menguranginya! </p>
+    </div>
+
+    <?php
+    // Tampilkan tulisan khusus untuk pengguna yang belum login
+    if (!isset($_SESSION['username'])) {
+        echo '
+    ?><a href="index.php">
+        <input type="submit" value="Buat Akun">
+    </a>';
+    }
+    ?>
+    <div class="gambar">
+        <img src="bumii.svg" width="720px" height="400px">
+    </div>
+    <nav class="navv">
+        <div class="dash">
+            Dashboard User
+        </div>
+    </nav>
+    <div class="lacak">
+        <p> Miliki dashboard-mu sendiri</p>
+        <p> Lacak pengeluaran karbonmu di sini </p>
+    </div>
+    <div class="cal">
+        <img src="3d calendar.svg">
+    </div>
+    <div class="aw">
+        <img src="Award.svg">
+    </div>
+    <div class="rep">
+        <img src="3d report.svg">
+    </div>
+    <div class="calp">
+        <p> Amatilah pengeluaran karbon</p>
+        <p> Perhari/perminggu/perbulan/pertahun </p>
+    </div>
+    <div class="awp">
+        <p> Berlomba-lomba lah bersama temanmu</p>
+        <p> Puntuk menjadi NET ZERO CARBON </p>
+    </div>
+    <div class="repp">
+        <p> Hitung pengeluaran karbonmu tiap harinya</p>
+        <p> lihat pencapaian dan rekomendasi di sini </p>
+    </div>
+    <nav class="calcu">
+        <div class="ca">
+            Calculator
+        </div>
+    </nav>
+    <div class="kalku">
+        <img src="Calculate.svg" width="200px" height="200px">
+    </div>
+    <div class="kal">
+        <img src="Co2.svg" width="100px" height="100px">
+    </div>
+    <div class="cek">
+        <p> Ayo cek emisi karbon kamu sekarang!</p>
+    </div>
+    <div class="paragraf">
+        <p> Langkah awal mengurangi karbon dimulai dari menghitung seberapa banyak emisi karbon</p>
+        <p> pribadi yang kita hasilkan setiap tahunnya. Salah satu kegiatan kita yang banyak</p>
+        <p> menghasilkan emisi karbon adalah transportasi. Oleh karena itu, anda bisa coba untuk</p>
+        <p> mulai menghitung karbon hasil transportasi menggunakan Carbon Away </p>
+        <p> Anda dapat dengan mudah menghitungnya di sini, tinggal klik dan klik, maka </p>
+        <p> hasilnya akan muncul dalam sekejap mata!</p>
+    </div>
+    <nav class="ben">
+        <div class="bene">
+            Benefit
+        </div>
+    </nav>
+    <div class="what">
+        <p> What's about benefit?</p>
+    </div>
+    <div class="for">
+        <p> For around you</p>
+    </div>
+    <div class="content">
+        <p> Pemanasan Global</p>
+    </div>
+    <div class="panas">
+        <img src="Global warming.svg" width="100px" height="100px">
+    </div>
+    <div class="global">
+        <p> Emisi gas karbondioksida meningkatkan pemanasan global dan perubahan iklim.</p>
+        <p> Ini mengakibatkan dampak buruk seperti banjir, kekeringan, dan masalah</p>
+        <p> kesehatan akibat polusi udara. Mengurangi emisi adalah langkah penting</p>
+        <p> untuk menjaga lingkungan dan kesejahteraan manusia.</p>
+    </div>
+    <div class="alam">
+        <p> Bencana alam</p>
+    </div>
+    <div class="al">
+        <img src="Extreme weather.svg" width="100px" height="100px">
+    </div>
+    <div class="alamm">
+        <p> Bencana hidrometeorologi, seperti banjir, tanah longsor, kekeringan,</p>
+        <p> naiknya air laut, dan topan, dipicu oleh perubahan iklim akibat</p>
+        <p> pemanasan global. Polutan gas rumah kaca, terutama karbondioksida,</p>
+        <p> mengganggu kondisi atmosfer bumi, meningkatkan frekuensi dan</p>
+        <p> keparahan bencana ini.</p>
+    </div>
+    <div class="isu">
+        <p> Isu kesehatan</p>
+    </div>
+    <div class="isuu">
+        <img src="Healthy.svg" width="100px" height="100px">
+    </div>
+    <div class="issuu">
+        <p> Peningkatan emisi akan berdampak buruk pada kesehatan manusia melalui</p>
+        <p> paparan terhadap polusi udara. Ini dapat mengakibatkan gangguan paru-paru,</p>
+        <p> jantung, otak, dan kesehatan mental. Mengurangi emisi adalah langkah</p>
+        <p> penting untuk mengurangi risiko penyakit seperti ISPA.</p>
+    </div>
+    <div class="air">
+        <p> Ketersediaan air</p>
+    </div>
+    <div class="airr">
+        <img src="Water.svg" width="100px" height="100px">
+    </div>
+    <div class="aiirr">
+        <p> Emisi berlebihan dari gas karbondioksida menyebabkan pemanasan global</p>
+        <p> dan perubahan iklim. Ini berdampak pada kondisi cuaca yang ekstrem </p>
+        <p> seperti kekeringan dan banjir. Mengendalikan emisi adalah cara</p>
+        <p> untuk mempertahankan ketersediaan air bersih untuk masa depan.</p>
+    </div>
+    <script src="homepage.js"></script>
+</body>
+</html>

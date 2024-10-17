@@ -1,0 +1,65 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'signin.css' %}">
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <title>{% block title %}My First App{% endblock title %}</title>
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navdiv">
+            <div class="logo"><a href="#">I-CARD</a> </div>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <button><a href="{% url 'register' %}">signup</a></button>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <img src="{% static 'asset/img-login4.png' %}" class="png2"/>
+        <div class="panels-container">
+            <div class="panel left-panel">
+                <div class="content">
+                    <img src="{% static 'asset/img-login3.png' %}" alt="" class="image"/>
+                </div>
+                <h3>Create Your</h3>
+                <h3>Unique Card</h3>
+            </div>
+        </div>
+        <div class="forms-container">
+            <div class="signup">
+                <form action="/login/" method="post">
+                    {%csrf_token%}
+                    <h2 class="title">Login</h2>
+                    <div class="input-field">
+                        <input type="text" name="username" placeholder="Username"/>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" placeholder="Password"/>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox"> Ingat Saya</label>
+                        <p><a href="#">Lupa Kata Sandi?</a></p>
+                    </div>
+                    <input type="submit" class="btn solid" value="Login"/>
+                    <p class="have-account">
+                        atau kamu bisa bergabung menggunakan
+                        <div class="social-media">
+                            <a href="#" class="social-icon"><img src="{% static 'asset/flat-color-icons_google.png' %}"></a>
+                        </div>
+                        <p><a href="{% url 'register' %}" class="log">Belum punya akun? klik di sini untuk daftar sekarang!</a></p>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}My First App{% endblock title %}
+{% block content %}
+<link href="{% static 'signup.css' %}" rel="stylesheet">
+
+<nav class="navbar">
+    <div class="navdiv">
+        <div class="logo"><a href="#">I-CARD</a> </div>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <button><a href="{% url 'login' %}">Login</a></button>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <img src="{% static 'asset/img-login2.png' %}" class="png2"/>
+    <div class="panels-container">
+        <div class="panel left-panel">
+            <div class="content">
+                <img src="{% static 'asset/img login.png' %}" alt="" class="image"/>
+            </div>
+            <h3>Make Your</h3>
+            <h3>Card</h3>
+        </div>
+    </div>
+    <div class="forms-container">
+        <div class="signup">
+            <form action="{% url 'register' %}" method="post" class="signup-in-form">
+                {% csrf_token %}
+                <h2 class="title">Sign Up</h2>
+                <div class="input-field">
+                    {{ form.username.label_tag }}
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <div class="error">{{ form.username.errors }}</div>
+                    {% endif %}
+                </div>
+                <div class="input-field">
+                    {{ form.password1.label_tag }}
+                    {{ form.password1 }}
+                    {% if form.password1.errors %}
+                        <div class="error">{{ form.password1.errors }}</div>
+                    {% endif %}
+                </div>
+                <div class="input-field">
+                    {{ form.password2.label_tag }}
+                    {{ form.password2 }}
+                    {% if form.password2.errors %}
+                        <div class="error">{{ form.password2.errors }}</div>
+                    {% endif %}
+                </div>
+                <input type="submit" class="btn solid" value="Buat Akun"/>
+                <p class="have-account">
+                    Sudah Punya Akun?
+                    <p><a href="{% url 'login' %}" class="log">Login</a></p>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

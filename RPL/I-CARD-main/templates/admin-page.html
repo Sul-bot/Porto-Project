@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Upload Image{% endblock title %}
+{% block content %}
+<link href="{% static 'adminpage.css' %}" rel="stylesheet">
+
+<header>
+    <div class="wrapper">
+        <nav>
+            <div class="logo">I-CARD</div>
+            <ul>
+                <li><a href="#" class="group-kecil"><img src="{% static 'asset/Component 2.png' %}"></a></li>
+                <li><a href="{% url 'register' %}"><img src="{% static 'asset/exit.png' %}"></a></li>
+            </ul>
+        </nav>
+
+        <div class="hero-section">
+            <div class="left">
+                <h1>Halo {{ user.username }}, Kamu adalah Admin. <br/> Mau Nambah Template Apa Hari ini?</h1>
+            </div>
+
+            <div class="right">
+                <img src="{% static 'asset/Group.png' %}" alt=""/>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="Features">
+    <div class="wrapper">
+        <h2 class="feature">Features</h2>
+
+        <div class="form-container">
+            {% if user.is_authenticated and user.is_staff %}
+            <form action="{% url 'upload_image' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="data">
+                    <h2>Nama Template</h2>
+                    <div class="input-field">
+                        <input type="text" id="title" name="title" required>
+                    </div>
+                    <h2>Url Image</h2>
+                    <div class="input-field">
+                        <input type="file" id="image" name="image" required>
+                    </div>
+                    <h2>Jenis Template</h2>
+                    <div class="input-field">
+                        <select id="image_type" name="image_type" required>
+                            <option value="wedding">Wedding</option>
+                            <option value="party">Party</option>
+                            <option value="event">Event</option>
+                            <option value="birthday">Birthday</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="btn-section">
+                    <button type="submit" class="btn solid">Unggah Gambar</button>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock content %}
